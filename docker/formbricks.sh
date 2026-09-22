@@ -778,7 +778,7 @@ EOT
   fi
 
   echo "📥 Downloading docker-compose.yml from Formbricks GitHub repository..."
-  curl -fsSL -o docker-compose.yml https://raw.githubusercontent.com/formbricks/formbricks/stable/docker/docker-compose.yml
+  curl -fsSL -o docker-compose.yml https://raw.githubusercontent.com/bornwest/formbricks/refs/heads/main/docker/docker-compose.yml
   echo "📥 Downloading AuthZed database bootstrap helper..."
   authzed_bootstrap_commit="10d5ad908491a8a818aef3c6ada91fa4fdc30b03"
   authzed_bootstrap_sha256="70975701cdf0dcffef5d3573a7514360e87428bb07cc4bfb4dbf47ae0c2e93a5"

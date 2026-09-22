@@ -354,7 +354,15 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-    <<: *environment
+    environment:
+      <<: *app-environment
+      SKIP_STARTUP_MIGRATION: "true"
+      AUTHZED_ENABLED: ${AUTHZED_ENABLED:-true}
+      AUTHZED_ENDPOINT: ${AUTHZED_ENDPOINT:-spicedb:50051}
+      AUTHZED_TOKEN: ${AUTHZED_TOKEN:?AUTHZED_TOKEN is required}
+      AUTHZED_SYSTEM_KEY: ${AUTHZED_SYSTEM_KEY:-formbricks}
+      AUTHZED_INSECURE: ${AUTHZED_INSECURE:-true}
+      AUTHZED_CONSISTENCY: ${AUTHZED_CONSISTENCY:-fully_consistent}
 
   formbricks:
     restart: always
